@@ -8,7 +8,7 @@ export const Sidebar: FC<ISidebarProps> = ({ children }) => {
   return (
     <>
       <div className={styles.sidebar}>
-        <div className={styles.iconsSidebar}>
+        <div className={styles.logoWrapper}>
           <img id={styles["logo"]} src={"./assets/photo/img.png"} width="60" height="64" alt=" " />
         </div>
         {/*<Cart></Cart>*/}

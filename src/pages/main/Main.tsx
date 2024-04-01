@@ -1,7 +1,9 @@
-export const Main = () => {
-    return (
-        <div>
+import { Products } from "../../widgets/prodcuts";
 
-        </div>
-    );
+export const Main = () => {
+  return (
+    <div>
+      <Products></Products>
+    </div>
+  );
 };

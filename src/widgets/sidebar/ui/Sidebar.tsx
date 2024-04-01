@@ -9,7 +9,7 @@ export const Sidebar: FC<ISidebarProps> = ({ children }) => {
     <>
       <div className={styles.sidebar}>
         <div className={styles.logoWrapper}>
-          <img id={styles["logo"]} src={"./assets/photo/img.png"} width="60" height="64" alt=" " />
+          <img id={styles["logo"]} src={"./assets/photo/logo.png"} width="60" height="64" alt=" " />
         </div>
         {/*<Cart></Cart>*/}
       </div>

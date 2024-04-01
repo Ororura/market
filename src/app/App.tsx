@@ -1,5 +1,5 @@
 import "./App.css";
-import { Sidebar } from "../widgets/sidebar";
+import { Sidebar } from "@/widgets/sidebar";
 import { Main } from "../pages/main/Main.tsx";
 
 const App = () => {

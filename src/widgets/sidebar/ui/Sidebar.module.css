@@ -1,26 +1,17 @@
 .sidebar {
+  width: 200px;
+  height: 100%;
   transition: 150ms;
   transform: translateX(-120px);
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 200px;
   background-color: #4e6cff;
   overflow: hidden;
 }
 
 .sidebar:hover {
-  transform: translateX(0px);
-}
-
-.sidebar:hover .logoWrapper {
-  transition: 500ms;
-}
-
-.sidebar:hover #logo {
-  width: 100px;
-  height: 110px;
+  transform: translateX(0);
 }
 
 .logoWrapper {
@@ -29,7 +20,16 @@
   display: flex;
 }
 
+.sidebar:hover .logoWrapper {
+  transition: 500ms;
+}
+
 #logo {
   transition: 300ms;
   margin: auto;
+}
+
+.sidebar:hover #logo {
+  width: 100px;
+  height: 110px;
 }

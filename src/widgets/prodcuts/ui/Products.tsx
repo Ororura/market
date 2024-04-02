@@ -1,25 +1,27 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Product } from "@/entities/product";
+import { useSelector } from "react-redux";
+import { selectProduct, setProduct } from "@/entities/product";
 import { IProduct } from "@/shared";
-
-const product: IProduct = {
-  id: 1,
-  title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-  price: 109.95,
-  description:
-    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-  category: "men's clothing",
-  image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-  rating: {
-    rate: 3.9,
-    count: 120,
-  },
-};
+import { useAppDispatch } from "@/app/hooks/hooks.ts";
+import { useGetAllProduct } from "@/entities/product/model/api/productHandler.ts";
 
 export const Products: FC = () => {
+  const selectedProduct: IProduct[] = useSelector(selectProduct);
+  const dispatch = useAppDispatch();
+  const { data } = useGetAllProduct();
+
+  useEffect(() => {
+    if (data) {
+      dispatch(setProduct(data));
+    }
+  }, [data, dispatch]);
+
   return (
     <div>
-      <Product product={product}></Product>{" "}
+      {selectedProduct.map((el, idx) => (
+        <Product key={idx} product={el}></Product>
+      ))}
     </div>
   );
 };

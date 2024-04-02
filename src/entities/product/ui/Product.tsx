@@ -7,6 +7,18 @@ interface IProps {
 }
 
 export const Product: FC<IProps> = (props) => {
+  //const dispatch = useAppDispatch();
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const data = await response();
+  //     console.log(data);
+  //     if (data) {
+  //       dispatch(setProduct(data));
+  //     }
+  //   })();
+  // }, []);
+
   return (
     <div className={styles.product} key={props.product.id}>
       <div className={styles.imgFrame}>

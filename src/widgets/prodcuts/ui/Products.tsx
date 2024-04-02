@@ -1,11 +1,16 @@
 import { FC, useEffect } from "react";
 import { Product, useLazyGetAllProductsQuery } from "@/entities/product";
-import { selectProduct } from "@/entities/product";
-import { useAppSelector } from "@/app/providers/store.tsx";
+import { useStore } from "@/app/providers/hooks.ts";
 
 export const Products: FC = () => {
-  const selectedProduct = useAppSelector(selectProduct);
   const [getProducts] = useLazyGetAllProductsQuery();
+  const {
+    state: {
+      Product: { products }
+    }
+  } = useStore((store) => ({
+    Product: store.Product,
+  }));
 
   useEffect(() => {
     getProducts();
@@ -13,7 +18,7 @@ export const Products: FC = () => {
 
   return (
     <div>
-      {selectedProduct.map((el, idx) => (
+      {products.map((el, idx) => (
         <Product key={idx} product={el}></Product>
       ))}
     </div>

@@ -2,7 +2,7 @@ import "./App.css";
 import { Sidebar } from "@/widgets/sidebar";
 import { Main } from "../pages/main/Main.tsx";
 import { Provider } from "react-redux";
-import { store } from "./providers/store.tsx";
+import { store } from "./providers/store.ts";
 import { LoadingLayout } from "@/shared/ui/layout/loading";
 
 const App = () => {

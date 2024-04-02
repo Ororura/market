@@ -1,6 +1,5 @@
 import { FC, ReactNode } from "react";
-import { useAppSelector } from "@/app/providers/store.tsx";
-import { selectIsAppLoading } from "@/entities/app";
+import { useStore } from "@/app/providers/hooks.ts";
 import styles from './styles.module.css';
 
 interface ILoadingLayout {
@@ -8,7 +7,13 @@ interface ILoadingLayout {
 }
 
 export const LoadingLayout: FC<ILoadingLayout> = ({ children }) => {
-  const isAppLoading = useAppSelector(selectIsAppLoading);
+  const {
+    state: {
+      App: { isAppLoading }
+    },
+  } = useStore((store) => ({
+    App: store.App,
+  }));
 
   return (
     <>

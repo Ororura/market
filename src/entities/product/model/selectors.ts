@@ -1,3 +1,3 @@
-import { RootState } from "@/app/providers/store.tsx";
+import { RootState } from "@/app/providers/types.ts";
 
-export const selectProduct = (state: RootState) => state.product.products;
+export const selectProduct = (state: RootState) => state.Product;

@@ -1,3 +1,4 @@
-import { RootState } from "@/app/providers/store.tsx";
+import { RootState } from "@/app/providers/types.ts";
 
-export const selectIsAppLoading = (state: RootState) => state.app.isAppLoading;
+
+export const selectApp = (state: RootState) => state.App;

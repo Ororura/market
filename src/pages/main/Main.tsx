@@ -1,4 +1,4 @@
-import { Products } from "../../widgets/prodcuts";
+import { Products } from "@/widgets/prodcuts";
 
 export const Main = () => {
   return (

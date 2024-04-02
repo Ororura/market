@@ -1,0 +1,1 @@
+export { useGetAllProductsQuery, useLazyGetAllProductsQuery, useGetProductByIdQuery, productApi } from "./api";
